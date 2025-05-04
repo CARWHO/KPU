@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.runs/impl_1/toplevel.tcl"
+  variable script "E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.runs/impl_1/toplevel.tcl"
   variable category "vivado_impl"
 }
 
@@ -122,8 +122,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param tcl.statsThreshold 360
-  set_param chipscope.maxJobs 2
+  set_param chipscope.maxJobs 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xczu1cg-sbva484-1-e
   set_property board_part avnet-tria:zuboard_1cg:part0:1.2 [current_project]
@@ -131,21 +130,21 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.cache/wt} [current_project]
-  set_property parent.project_path {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.xpr} [current_project]
-  set_property ip_output_repo {{D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.cache/ip}} [current_project]
+  set_property webtalk.parent_dir E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.cache/wt [current_project]
+  set_property parent.project_path E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.xpr [current_project]
+  set_property ip_output_repo E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet {{D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.runs/synth_1/toplevel.dcp}}
+  add_files -quiet E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.runs/synth_1/toplevel.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files {{D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/bd/zynqTOclkwizard/zynqTOclkwizard.bd}}
-  read_ip -quiet {{D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/ip/aee_rom/aee_rom.xci}}
+  add_files E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/bd/zynqTOclkwizard/zynqTOclkwizard.bd
+  read_ip -quiet E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/ip/aee_rom/aee_rom.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc {{D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/constrs_1/new/avnet.xdc}}
+  read_xdc E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/constrs_1/new/avnet.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

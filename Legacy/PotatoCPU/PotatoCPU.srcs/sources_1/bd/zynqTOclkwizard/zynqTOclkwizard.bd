@@ -61,11 +61,26 @@
           "PSU_DDR_RAM_LOWADDR_OFFSET": {
             "value": "0x20000000"
           },
+          "PSU_MIO_2_DIRECTION": {
+            "value": "in"
+          },
+          "PSU_MIO_2_DRIVE_STRENGTH": {
+            "value": "12"
+          },
+          "PSU_MIO_2_SLEW": {
+            "value": "fast"
+          },
+          "PSU_MIO_3_DIRECTION": {
+            "value": "out"
+          },
+          "PSU_MIO_3_INPUT_TYPE": {
+            "value": "cmos"
+          },
           "PSU_MIO_TREE_PERIPHERALS": {
-            "value": "##################UART 0#UART 0##########################################################"
+            "value": "##################UART 0#UART 0#######PMU GPI 0#PMU GPI 1#PMU GPI 2#PMU GPI 3#PMU GPI 4#PMU GPI 5#PMU GPO 0#PMU GPO 1#PMU GPO 2#PMU GPO 3#PMU GPO 4#PMU GPO 5########################################"
           },
           "PSU_MIO_TREE_SIGNALS": {
-            "value": "##################rxd#txd##########################################################"
+            "value": "##################rxd#txd#######gpi[0]#gpi[1]#gpi[2]#gpi[3]#gpi[4]#gpi[5]#gpo[0]#gpo[1]#gpo[2]#gpo[3]#gpo[4]#gpo[5]########################################"
           },
           "PSU__ACT_DDR_FREQ_MHZ": {
             "value": "479.995209"
@@ -133,7 +148,121 @@
           "PSU__CRL_APB__UART1_REF_CTRL__ACT_FREQMHZ": {
             "value": "99.999001"
           },
+          "PSU__CSUPMU__PERIPHERAL__VALID": {
+            "value": "1"
+          },
           "PSU__DDR_HIGH_ADDRESS_GUI_ENABLE": {
+            "value": "0"
+          },
+          "PSU__LPD_SLCR__CSUPMU__ACT_FREQMHZ": {
+            "value": "100.000000"
+          },
+          "PSU__MAXIGP0__DATA_WIDTH": {
+            "value": "128"
+          },
+          "PSU__MAXIGP1__DATA_WIDTH": {
+            "value": "128"
+          },
+          "PSU__PMU_COHERENCY": {
+            "value": "0"
+          },
+          "PSU__PMU__AIBACK__ENABLE": {
+            "value": "0"
+          },
+          "PSU__PMU__EMIO_GPI__ENABLE": {
+            "value": "0"
+          },
+          "PSU__PMU__EMIO_GPO__ENABLE": {
+            "value": "0"
+          },
+          "PSU__PMU__GPI0__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__GPI0__IO": {
+            "value": "MIO 26"
+          },
+          "PSU__PMU__GPI1__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__GPI1__IO": {
+            "value": "MIO 27"
+          },
+          "PSU__PMU__GPI2__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__GPI2__IO": {
+            "value": "MIO 28"
+          },
+          "PSU__PMU__GPI3__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__GPI3__IO": {
+            "value": "MIO 29"
+          },
+          "PSU__PMU__GPI4__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__GPI4__IO": {
+            "value": "MIO 30"
+          },
+          "PSU__PMU__GPI5__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__GPI5__IO": {
+            "value": "MIO 31"
+          },
+          "PSU__PMU__GPO0__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__GPO0__IO": {
+            "value": "MIO 32"
+          },
+          "PSU__PMU__GPO1__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__GPO1__IO": {
+            "value": "MIO 33"
+          },
+          "PSU__PMU__GPO2__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__GPO2__IO": {
+            "value": "MIO 34"
+          },
+          "PSU__PMU__GPO2__POLARITY": {
+            "value": "low"
+          },
+          "PSU__PMU__GPO3__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__GPO3__IO": {
+            "value": "MIO 35"
+          },
+          "PSU__PMU__GPO3__POLARITY": {
+            "value": "low"
+          },
+          "PSU__PMU__GPO4__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__GPO4__IO": {
+            "value": "MIO 36"
+          },
+          "PSU__PMU__GPO4__POLARITY": {
+            "value": "low"
+          },
+          "PSU__PMU__GPO5__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__GPO5__IO": {
+            "value": "MIO 37"
+          },
+          "PSU__PMU__GPO5__POLARITY": {
+            "value": "low"
+          },
+          "PSU__PMU__PERIPHERAL__ENABLE": {
+            "value": "1"
+          },
+          "PSU__PMU__PLERROR__ENABLE": {
             "value": "0"
           },
           "PSU__PROTECTION__MASTERS": {
@@ -169,8 +298,106 @@
           "PSU__UART1__PERIPHERAL__IO": {
             "value": "EMIO"
           },
+          "PSU__USE__M_AXI_GP0": {
+            "value": "1"
+          },
+          "PSU__USE__M_AXI_GP1": {
+            "value": "1"
+          },
           "PSU__USE__M_AXI_GP2": {
             "value": "0"
+          }
+        },
+        "interface_ports": {
+          "M_AXI_HPM0_FPD": {
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "mode": "Master",
+            "address_space_ref": "Data",
+            "base_address": {
+              "minimum": "0xA0000000",
+              "maximum": "0x0047FFFFFFFF",
+              "width": "40"
+            }
+          },
+          "M_AXI_HPM1_FPD": {
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "mode": "Master",
+            "address_space_ref": "Data",
+            "base_address": {
+              "minimum": "0xB0000000",
+              "maximum": "0x007FFFFFFFFF",
+              "width": "40"
+            }
+          }
+        },
+        "addressing": {
+          "address_spaces": {
+            "Data": {
+              "range": "1T",
+              "width": "40",
+              "local_memory_map": {
+                "name": "Data",
+                "description": "Address Space Segments",
+                "address_blocks": {
+                  "M_AXI_HPM0_LPD:LPD_AFI_FS": {
+                    "name": "M_AXI_HPM0_LPD:LPD_AFI_FS",
+                    "display_name": "M_AXI_HPM0_LPD/LPD_AFI_FS",
+                    "base_address": "0x80000000",
+                    "range": "512M",
+                    "width": "32",
+                    "usage": "register"
+                  },
+                  "M_AXI_HPM1_FPD:FPD_AFI_FS0_00": {
+                    "name": "M_AXI_HPM1_FPD:FPD_AFI_FS0_00",
+                    "display_name": "M_AXI_HPM1_FPD/FPD_AFI_FS0_00",
+                    "base_address": "0xB0000000",
+                    "range": "256M",
+                    "width": "32",
+                    "usage": "register"
+                  },
+                  "M_AXI_HPM1_FPD:FPD_AFI_FS0_01": {
+                    "name": "M_AXI_HPM1_FPD:FPD_AFI_FS0_01",
+                    "display_name": "M_AXI_HPM1_FPD/FPD_AFI_FS0_01",
+                    "base_address": "0x000500000000",
+                    "range": "4G",
+                    "width": "35",
+                    "usage": "register"
+                  },
+                  "M_AXI_HPM1_FPD:FPD_AFI_FS0_10": {
+                    "name": "M_AXI_HPM1_FPD:FPD_AFI_FS0_10",
+                    "display_name": "M_AXI_HPM1_FPD/FPD_AFI_FS0_10",
+                    "base_address": "0x004800000000",
+                    "range": "224G",
+                    "width": "39",
+                    "usage": "register"
+                  },
+                  "M_AXI_HPM0_FPD:FPD_AFI_FS1_00": {
+                    "name": "M_AXI_HPM0_FPD:FPD_AFI_FS1_00",
+                    "display_name": "M_AXI_HPM0_FPD/FPD_AFI_FS1_00",
+                    "base_address": "0xA0000000",
+                    "range": "256M",
+                    "width": "32",
+                    "usage": "register"
+                  },
+                  "M_AXI_HPM0_FPD:FPD_AFI_FS1_01": {
+                    "name": "M_AXI_HPM0_FPD:FPD_AFI_FS1_01",
+                    "display_name": "M_AXI_HPM0_FPD/FPD_AFI_FS1_01",
+                    "base_address": "0x000400000000",
+                    "range": "4G",
+                    "width": "35",
+                    "usage": "register"
+                  },
+                  "M_AXI_HPM0_FPD:FPD_AFI_FS1_10": {
+                    "name": "M_AXI_HPM0_FPD:FPD_AFI_FS1_10",
+                    "display_name": "M_AXI_HPM0_FPD/FPD_AFI_FS1_10",
+                    "base_address": "0x001000000000",
+                    "range": "224G",
+                    "width": "39",
+                    "usage": "register"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -208,7 +435,9 @@
       "zynq_ultra_ps_e_0_pl_clk0": {
         "ports": [
           "zynq_ultra_ps_e_0/pl_clk0",
-          "clk_wiz_0/clk_in1"
+          "clk_wiz_0/clk_in1",
+          "zynq_ultra_ps_e_0/maxihpm1_fpd_aclk",
+          "zynq_ultra_ps_e_0/maxihpm0_fpd_aclk"
         ]
       },
       "zynq_ultra_ps_e_0_pl_resetn0": {

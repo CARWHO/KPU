@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.runs/synth_1/toplevel.tcl"
+  variable script "E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.runs/synth_1/toplevel.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,8 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.statsThreshold 360
-set_param chipscope.maxJobs 2
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xczu1cg-sbva484-1-e
 
@@ -79,63 +77,64 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.cache/wt} [current_project]
-set_property parent.project_path {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.xpr} [current_project]
+set_property webtalk.parent_dir E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.cache/wt [current_project]
+set_property parent.project_path E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part avnet-tria:zuboard_1cg:part0:1.2 [current_project]
-set_property ip_output_repo {d:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.cache/ip} [current_project]
+set_property ip_output_repo e:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files {{D:/OneDrive_2025-04-23/RISCV CPU/potato/software/bootloader/bootloader.coe}}
+add_files E:/GIt/RISC-V-CPU/Legacy/potato/software/bootloader/bootloader.coe
+add_files E:/GIt/RISC-V-CPU/potato/software/bootloader/bootloader.coe
 read_vhdl -library xil_defaultlib {
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_types.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_constants.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_utilities.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/example/aee_rom_wrapper.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_alu.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_alu_control_unit.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_alu_mux.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_comparator.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_csr.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_control_unit.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_counter.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_csr_unit.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_register_file.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_fetch.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_imm_decoder.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_decode.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_csr_alu.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_execute.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_memory.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_writeback.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_core.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_fifo.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_icache.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_wb_adapter.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_wb_arbiter.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_potato.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_soc_gpio.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_soc_intercon.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_soc_memory.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_soc_reset.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_soc_timer.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_soc_uart.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/hdl/zynqTOclkwizard_wrapper.vhd}
-  {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/example/toplevel.vhd}
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_types.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_constants.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_utilities.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/example/aee_rom_wrapper.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_alu.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_alu_control_unit.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_alu_mux.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_comparator.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_csr.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_control_unit.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_counter.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_csr_unit.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_register_file.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_fetch.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_imm_decoder.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_decode.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_csr_alu.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_execute.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_memory.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_writeback.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_core.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_fifo.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_icache.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_wb_adapter.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_wb_arbiter.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/src/pp_potato.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_soc_gpio.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_soc_intercon.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_soc_memory.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_soc_reset.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_soc_timer.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/soc/pp_soc_uart.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/zynqTOclkwizard_wrapper.vhd
+  E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/imports/example/toplevel.vhd
 }
-add_files {{D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/bd/zynqTOclkwizard/zynqTOclkwizard.bd}}
-set_property used_in_implementation false [get_files -all {{d:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/ip/zynqTOclkwizard_zynq_ultra_ps_e_0_0/zynqTOclkwizard_zynq_ultra_ps_e_0_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/ip/zynqTOclkwizard_zynq_ultra_ps_e_0_0/zynqTOclkwizard_zynq_ultra_ps_e_0_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/ip/zynqTOclkwizard_clk_wiz_0_0/zynqTOclkwizard_clk_wiz_0_0_board.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/ip/zynqTOclkwizard_clk_wiz_0_0/zynqTOclkwizard_clk_wiz_0_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/ip/zynqTOclkwizard_clk_wiz_0_0/zynqTOclkwizard_clk_wiz_0_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/zynqTOclkwizard_ooc.xdc}}]
+add_files E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/bd/zynqTOclkwizard/zynqTOclkwizard.bd
+set_property used_in_implementation false [get_files -all e:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/ip/zynqTOclkwizard_zynq_ultra_ps_e_0_0/zynqTOclkwizard_zynq_ultra_ps_e_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all e:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/ip/zynqTOclkwizard_zynq_ultra_ps_e_0_0/zynqTOclkwizard_zynq_ultra_ps_e_0_0.xdc]
+set_property used_in_implementation false [get_files -all e:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/ip/zynqTOclkwizard_clk_wiz_0_0/zynqTOclkwizard_clk_wiz_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all e:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/ip/zynqTOclkwizard_clk_wiz_0_0/zynqTOclkwizard_clk_wiz_0_0.xdc]
+set_property used_in_implementation false [get_files -all e:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/ip/zynqTOclkwizard_clk_wiz_0_0/zynqTOclkwizard_clk_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all e:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/zynqTOclkwizard_ooc.xdc]
 
-read_ip -quiet {{D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/sources_1/ip/aee_rom/aee_rom.xci}}
-set_property used_in_implementation false [get_files -all {{d:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.gen/sources_1/ip/aee_rom_2/aee_rom_ooc.xdc}}]
+read_ip -quiet E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/sources_1/ip/aee_rom/aee_rom.xci
+set_property used_in_implementation false [get_files -all e:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.gen/sources_1/ip/aee_rom/aee_rom_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -146,14 +145,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/constrs_1/new/avnet.xdc}}
-set_property used_in_implementation false [get_files {{D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/constrs_1/new/avnet.xdc}}]
+read_xdc E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/constrs_1/new/avnet.xdc
+set_property used_in_implementation false [get_files E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/constrs_1/new/avnet.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental {D:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.srcs/utils_1/imports/synth_1/toplevel.dcp}
+read_checkpoint -auto_incremental -incremental E:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.srcs/utils_1/imports/synth_1/toplevel.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

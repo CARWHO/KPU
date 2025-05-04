@@ -22866,8 +22866,26 @@
 #define IOU_SLCR_MIO_PIN_18_OFFSET                                                 0XFF180048
 #undef IOU_SLCR_MIO_PIN_19_OFFSET 
 #define IOU_SLCR_MIO_PIN_19_OFFSET                                                 0XFF18004C
+#undef IOU_SLCR_MIO_PIN_26_OFFSET 
+#define IOU_SLCR_MIO_PIN_26_OFFSET                                                 0XFF180068
+#undef IOU_SLCR_MIO_PIN_27_OFFSET 
+#define IOU_SLCR_MIO_PIN_27_OFFSET                                                 0XFF18006C
+#undef IOU_SLCR_MIO_PIN_28_OFFSET 
+#define IOU_SLCR_MIO_PIN_28_OFFSET                                                 0XFF180070
+#undef IOU_SLCR_MIO_PIN_29_OFFSET 
+#define IOU_SLCR_MIO_PIN_29_OFFSET                                                 0XFF180074
+#undef IOU_SLCR_MIO_PIN_30_OFFSET 
+#define IOU_SLCR_MIO_PIN_30_OFFSET                                                 0XFF180078
+#undef IOU_SLCR_MIO_PIN_31_OFFSET 
+#define IOU_SLCR_MIO_PIN_31_OFFSET                                                 0XFF18007C
+#undef IOU_SLCR_MIO_PIN_32_OFFSET 
+#define IOU_SLCR_MIO_PIN_32_OFFSET                                                 0XFF180080
+#undef IOU_SLCR_MIO_PIN_33_OFFSET 
+#define IOU_SLCR_MIO_PIN_33_OFFSET                                                 0XFF180084
 #undef IOU_SLCR_MIO_MST_TRI0_OFFSET 
 #define IOU_SLCR_MIO_MST_TRI0_OFFSET                                               0XFF180204
+#undef IOU_SLCR_MIO_MST_TRI1_OFFSET 
+#define IOU_SLCR_MIO_MST_TRI1_OFFSET                                               0XFF180208
 #undef IOU_SLCR_BANK0_CTRL0_OFFSET 
 #define IOU_SLCR_BANK0_CTRL0_OFFSET                                                0XFF180138
 #undef IOU_SLCR_BANK0_CTRL1_OFFSET 
@@ -23010,6 +23028,421 @@
 #define IOU_SLCR_MIO_PIN_19_L3_SEL_MASK                        0x000000E0U
 
 /*
+* Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Output, gem0_rgmii_tx_
+    * clk- (TX RGMII clock)
+*/
+#undef IOU_SLCR_MIO_PIN_26_L0_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_26_L0_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_26_L0_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_26_L0_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_26_L0_SEL_SHIFT                       1
+#define IOU_SLCR_MIO_PIN_26_L0_SEL_MASK                        0x00000002U
+
+/*
+* Level 1 Mux Select 0= Level 2 Mux Output 1= nand, Output, nfc_ce[1]- (NA
+    * ND chip enable)
+*/
+#undef IOU_SLCR_MIO_PIN_26_L1_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_26_L1_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_26_L1_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_26_L1_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_26_L1_SEL_SHIFT                       2
+#define IOU_SLCR_MIO_PIN_26_L1_SEL_MASK                        0x00000004U
+
+/*
+* Level 2 Mux Select 0= Level 3 Mux Output 1= pmu, Input, pmu_gpi[0]- (PMU
+    *  GPI) 2= test_scan, Input, test_scan_in[26]- (Test Scan Port) = test_sca
+    * n, Output, test_scan_out[26]- (Test Scan Port) 3= csu, Input, csu_ext_ta
+    * mper- (CSU Ext Tamper)
+*/
+#undef IOU_SLCR_MIO_PIN_26_L2_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_26_L2_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_26_L2_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_26_L2_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_26_L2_SEL_SHIFT                       3
+#define IOU_SLCR_MIO_PIN_26_L2_SEL_MASK                        0x00000018U
+
+/*
+* Level 3 Mux Select 0= gpio1, Input, gpio_1_pin_in[0]- (GPIO bank 1) 0= g
+    * pio1, Output, gpio_1_pin_out[0]- (GPIO bank 1) 1= can0, Input, can0_phy_
+    * rx- (Can RX signal) 2= i2c0, Input, i2c0_scl_input- (SCL signal) 2= i2c0
+    * , Output, i2c0_scl_out- (SCL signal) 3= pjtag, Input, pjtag_tck- (PJTAG
+    * TCK) 4= spi0, Input, spi0_sclk_in- (SPI Clock) 4= spi0, Output, spi0_scl
+    * k_out- (SPI Clock) 5= ttc2, Input, ttc2_clk_in- (TTC Clock) 6= ua0, Inpu
+    * t, ua0_rxd- (UART receiver serial input) 7= trace, Output, tracedq[4]- (
+    * Trace Port Databus)
+*/
+#undef IOU_SLCR_MIO_PIN_26_L3_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_26_L3_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_26_L3_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_26_L3_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_26_L3_SEL_SHIFT                       5
+#define IOU_SLCR_MIO_PIN_26_L3_SEL_MASK                        0x000000E0U
+
+/*
+* Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Output, gem0_rgmii_txd
+    * [0]- (TX RGMII data)
+*/
+#undef IOU_SLCR_MIO_PIN_27_L0_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_27_L0_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_27_L0_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_27_L0_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_27_L0_SEL_SHIFT                       1
+#define IOU_SLCR_MIO_PIN_27_L0_SEL_MASK                        0x00000002U
+
+/*
+* Level 1 Mux Select 0= Level 2 Mux Output 1= nand, Input, nfc_rb_n[0]- (N
+    * AND Ready/Busy)
+*/
+#undef IOU_SLCR_MIO_PIN_27_L1_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_27_L1_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_27_L1_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_27_L1_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_27_L1_SEL_SHIFT                       2
+#define IOU_SLCR_MIO_PIN_27_L1_SEL_MASK                        0x00000004U
+
+/*
+* Level 2 Mux Select 0= Level 3 Mux Output 1= pmu, Input, pmu_gpi[1]- (PMU
+    *  GPI) 2= test_scan, Input, test_scan_in[27]- (Test Scan Port) = test_sca
+    * n, Output, test_scan_out[27]- (Test Scan Port) 3= dpaux, Input, dp_aux_d
+    * ata_in- (Dp Aux Data) = dpaux, Output, dp_aux_data_out- (Dp Aux Data)
+*/
+#undef IOU_SLCR_MIO_PIN_27_L2_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_27_L2_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_27_L2_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_27_L2_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_27_L2_SEL_SHIFT                       3
+#define IOU_SLCR_MIO_PIN_27_L2_SEL_MASK                        0x00000018U
+
+/*
+* Level 3 Mux Select 0= gpio1, Input, gpio_1_pin_in[1]- (GPIO bank 1) 0= g
+    * pio1, Output, gpio_1_pin_out[1]- (GPIO bank 1) 1= can0, Output, can0_phy
+    * _tx- (Can TX signal) 2= i2c0, Input, i2c0_sda_input- (SDA signal) 2= i2c
+    * 0, Output, i2c0_sda_out- (SDA signal) 3= pjtag, Input, pjtag_tdi- (PJTAG
+    *  TDI) 4= spi0, Output, spi0_n_ss_out[2]- (SPI Master Selects) 5= ttc2, O
+    * utput, ttc2_wave_out- (TTC Waveform Clock) 6= ua0, Output, ua0_txd- (UAR
+    * T transmitter serial output) 7= trace, Output, tracedq[5]- (Trace Port D
+    * atabus)
+*/
+#undef IOU_SLCR_MIO_PIN_27_L3_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_27_L3_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_27_L3_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_27_L3_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_27_L3_SEL_SHIFT                       5
+#define IOU_SLCR_MIO_PIN_27_L3_SEL_MASK                        0x000000E0U
+
+/*
+* Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Output, gem0_rgmii_txd
+    * [1]- (TX RGMII data)
+*/
+#undef IOU_SLCR_MIO_PIN_28_L0_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_28_L0_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_28_L0_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_28_L0_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_28_L0_SEL_SHIFT                       1
+#define IOU_SLCR_MIO_PIN_28_L0_SEL_MASK                        0x00000002U
+
+/*
+* Level 1 Mux Select 0= Level 2 Mux Output 1= nand, Input, nfc_rb_n[1]- (N
+    * AND Ready/Busy)
+*/
+#undef IOU_SLCR_MIO_PIN_28_L1_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_28_L1_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_28_L1_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_28_L1_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_28_L1_SEL_SHIFT                       2
+#define IOU_SLCR_MIO_PIN_28_L1_SEL_MASK                        0x00000004U
+
+/*
+* Level 2 Mux Select 0= Level 3 Mux Output 1= pmu, Input, pmu_gpi[2]- (PMU
+    *  GPI) 2= test_scan, Input, test_scan_in[28]- (Test Scan Port) = test_sca
+    * n, Output, test_scan_out[28]- (Test Scan Port) 3= dpaux, Input, dp_hot_p
+    * lug_detect- (Dp Aux Hot Plug)
+*/
+#undef IOU_SLCR_MIO_PIN_28_L2_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_28_L2_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_28_L2_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_28_L2_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_28_L2_SEL_SHIFT                       3
+#define IOU_SLCR_MIO_PIN_28_L2_SEL_MASK                        0x00000018U
+
+/*
+* Level 3 Mux Select 0= gpio1, Input, gpio_1_pin_in[2]- (GPIO bank 1) 0= g
+    * pio1, Output, gpio_1_pin_out[2]- (GPIO bank 1) 1= can1, Output, can1_phy
+    * _tx- (Can TX signal) 2= i2c1, Input, i2c1_scl_input- (SCL signal) 2= i2c
+    * 1, Output, i2c1_scl_out- (SCL signal) 3= pjtag, Output, pjtag_tdo- (PJTA
+    * G TDO) 4= spi0, Output, spi0_n_ss_out[1]- (SPI Master Selects) 5= ttc1,
+    * Input, ttc1_clk_in- (TTC Clock) 6= ua1, Output, ua1_txd- (UART transmitt
+    * er serial output) 7= trace, Output, tracedq[6]- (Trace Port Databus)
+*/
+#undef IOU_SLCR_MIO_PIN_28_L3_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_28_L3_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_28_L3_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_28_L3_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_28_L3_SEL_SHIFT                       5
+#define IOU_SLCR_MIO_PIN_28_L3_SEL_MASK                        0x000000E0U
+
+/*
+* Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Output, gem0_rgmii_txd
+    * [2]- (TX RGMII data)
+*/
+#undef IOU_SLCR_MIO_PIN_29_L0_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_29_L0_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_29_L0_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_29_L0_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_29_L0_SEL_SHIFT                       1
+#define IOU_SLCR_MIO_PIN_29_L0_SEL_MASK                        0x00000002U
+
+/*
+* Level 1 Mux Select 0= Level 2 Mux Output 1= pcie, Input, pcie_reset_n- (
+    * PCIE Reset signal)
+*/
+#undef IOU_SLCR_MIO_PIN_29_L1_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_29_L1_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_29_L1_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_29_L1_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_29_L1_SEL_SHIFT                       2
+#define IOU_SLCR_MIO_PIN_29_L1_SEL_MASK                        0x00000004U
+
+/*
+* Level 2 Mux Select 0= Level 3 Mux Output 1= pmu, Input, pmu_gpi[3]- (PMU
+    *  GPI) 2= test_scan, Input, test_scan_in[29]- (Test Scan Port) = test_sca
+    * n, Output, test_scan_out[29]- (Test Scan Port) 3= dpaux, Input, dp_aux_d
+    * ata_in- (Dp Aux Data) = dpaux, Output, dp_aux_data_out- (Dp Aux Data)
+*/
+#undef IOU_SLCR_MIO_PIN_29_L2_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_29_L2_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_29_L2_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_29_L2_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_29_L2_SEL_SHIFT                       3
+#define IOU_SLCR_MIO_PIN_29_L2_SEL_MASK                        0x00000018U
+
+/*
+* Level 3 Mux Select 0= gpio1, Input, gpio_1_pin_in[3]- (GPIO bank 1) 0= g
+    * pio1, Output, gpio_1_pin_out[3]- (GPIO bank 1) 1= can1, Input, can1_phy_
+    * rx- (Can RX signal) 2= i2c1, Input, i2c1_sda_input- (SDA signal) 2= i2c1
+    * , Output, i2c1_sda_out- (SDA signal) 3= pjtag, Input, pjtag_tms- (PJTAG
+    * TMS) 4= spi0, Input, spi0_n_ss_in- (SPI Master Selects) 4= spi0, Output,
+    *  spi0_n_ss_out[0]- (SPI Master Selects) 5= ttc1, Output, ttc1_wave_out-
+    * (TTC Waveform Clock) 6= ua1, Input, ua1_rxd- (UART receiver serial input
+    * ) 7= trace, Output, tracedq[7]- (Trace Port Databus)
+*/
+#undef IOU_SLCR_MIO_PIN_29_L3_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_29_L3_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_29_L3_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_29_L3_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_29_L3_SEL_SHIFT                       5
+#define IOU_SLCR_MIO_PIN_29_L3_SEL_MASK                        0x000000E0U
+
+/*
+* Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Output, gem0_rgmii_txd
+    * [3]- (TX RGMII data)
+*/
+#undef IOU_SLCR_MIO_PIN_30_L0_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_30_L0_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_30_L0_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_30_L0_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_30_L0_SEL_SHIFT                       1
+#define IOU_SLCR_MIO_PIN_30_L0_SEL_MASK                        0x00000002U
+
+/*
+* Level 1 Mux Select 0= Level 2 Mux Output 1= pcie, Input, pcie_reset_n- (
+    * PCIE Reset signal)
+*/
+#undef IOU_SLCR_MIO_PIN_30_L1_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_30_L1_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_30_L1_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_30_L1_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_30_L1_SEL_SHIFT                       2
+#define IOU_SLCR_MIO_PIN_30_L1_SEL_MASK                        0x00000004U
+
+/*
+* Level 2 Mux Select 0= Level 3 Mux Output 1= pmu, Input, pmu_gpi[4]- (PMU
+    *  GPI) 2= test_scan, Input, test_scan_in[30]- (Test Scan Port) = test_sca
+    * n, Output, test_scan_out[30]- (Test Scan Port) 3= dpaux, Input, dp_hot_p
+    * lug_detect- (Dp Aux Hot Plug)
+*/
+#undef IOU_SLCR_MIO_PIN_30_L2_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_30_L2_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_30_L2_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_30_L2_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_30_L2_SEL_SHIFT                       3
+#define IOU_SLCR_MIO_PIN_30_L2_SEL_MASK                        0x00000018U
+
+/*
+* Level 3 Mux Select 0= gpio1, Input, gpio_1_pin_in[4]- (GPIO bank 1) 0= g
+    * pio1, Output, gpio_1_pin_out[4]- (GPIO bank 1) 1= can0, Input, can0_phy_
+    * rx- (Can RX signal) 2= i2c0, Input, i2c0_scl_input- (SCL signal) 2= i2c0
+    * , Output, i2c0_scl_out- (SCL signal) 3= swdt0, Input, swdt0_clk_in- (Wat
+    * ch Dog Timer Input clock) 4= spi0, Input, spi0_mi- (MISO signal) 4= spi0
+    * , Output, spi0_so- (MISO signal) 5= ttc0, Input, ttc0_clk_in- (TTC Clock
+    * ) 6= ua0, Input, ua0_rxd- (UART receiver serial input) 7= trace, Output,
+    *  tracedq[8]- (Trace Port Databus)
+*/
+#undef IOU_SLCR_MIO_PIN_30_L3_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_30_L3_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_30_L3_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_30_L3_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_30_L3_SEL_SHIFT                       5
+#define IOU_SLCR_MIO_PIN_30_L3_SEL_MASK                        0x000000E0U
+
+/*
+* Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Output, gem0_rgmii_tx_
+    * ctl- (TX RGMII control)
+*/
+#undef IOU_SLCR_MIO_PIN_31_L0_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_31_L0_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_31_L0_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_31_L0_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_31_L0_SEL_SHIFT                       1
+#define IOU_SLCR_MIO_PIN_31_L0_SEL_MASK                        0x00000002U
+
+/*
+* Level 1 Mux Select 0= Level 2 Mux Output 1= pcie, Input, pcie_reset_n- (
+    * PCIE Reset signal)
+*/
+#undef IOU_SLCR_MIO_PIN_31_L1_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_31_L1_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_31_L1_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_31_L1_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_31_L1_SEL_SHIFT                       2
+#define IOU_SLCR_MIO_PIN_31_L1_SEL_MASK                        0x00000004U
+
+/*
+* Level 2 Mux Select 0= Level 3 Mux Output 1= pmu, Input, pmu_gpi[5]- (PMU
+    *  GPI) 2= test_scan, Input, test_scan_in[31]- (Test Scan Port) = test_sca
+    * n, Output, test_scan_out[31]- (Test Scan Port) 3= csu, Input, csu_ext_ta
+    * mper- (CSU Ext Tamper)
+*/
+#undef IOU_SLCR_MIO_PIN_31_L2_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_31_L2_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_31_L2_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_31_L2_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_31_L2_SEL_SHIFT                       3
+#define IOU_SLCR_MIO_PIN_31_L2_SEL_MASK                        0x00000018U
+
+/*
+* Level 3 Mux Select 0= gpio1, Input, gpio_1_pin_in[5]- (GPIO bank 1) 0= g
+    * pio1, Output, gpio_1_pin_out[5]- (GPIO bank 1) 1= can0, Output, can0_phy
+    * _tx- (Can TX signal) 2= i2c0, Input, i2c0_sda_input- (SDA signal) 2= i2c
+    * 0, Output, i2c0_sda_out- (SDA signal) 3= swdt0, Output, swdt0_rst_out- (
+    * Watch Dog Timer Output clock) 4= spi0, Output, spi0_mo- (MOSI signal) 4=
+    *  spi0, Input, spi0_si- (MOSI signal) 5= ttc0, Output, ttc0_wave_out- (TT
+    * C Waveform Clock) 6= ua0, Output, ua0_txd- (UART transmitter serial outp
+    * ut) 7= trace, Output, tracedq[9]- (Trace Port Databus)
+*/
+#undef IOU_SLCR_MIO_PIN_31_L3_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_31_L3_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_31_L3_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_31_L3_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_31_L3_SEL_SHIFT                       5
+#define IOU_SLCR_MIO_PIN_31_L3_SEL_MASK                        0x000000E0U
+
+/*
+* Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Input, gem0_rgmii_rx_c
+    * lk- (RX RGMII clock)
+*/
+#undef IOU_SLCR_MIO_PIN_32_L0_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_32_L0_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_32_L0_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_32_L0_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_32_L0_SEL_SHIFT                       1
+#define IOU_SLCR_MIO_PIN_32_L0_SEL_MASK                        0x00000002U
+
+/*
+* Level 1 Mux Select 0= Level 2 Mux Output 1= nand, Input, nfc_dqs_in- (NA
+    * ND Strobe) 1= nand, Output, nfc_dqs_out- (NAND Strobe)
+*/
+#undef IOU_SLCR_MIO_PIN_32_L1_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_32_L1_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_32_L1_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_32_L1_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_32_L1_SEL_SHIFT                       2
+#define IOU_SLCR_MIO_PIN_32_L1_SEL_MASK                        0x00000004U
+
+/*
+* Level 2 Mux Select 0= Level 3 Mux Output 1= pmu, Output, pmu_gpo[0]- (PM
+    * U GPI) 2= test_scan, Input, test_scan_in[32]- (Test Scan Port) = test_sc
+    * an, Output, test_scan_out[32]- (Test Scan Port) 3= csu, Input, csu_ext_t
+    * amper- (CSU Ext Tamper)
+*/
+#undef IOU_SLCR_MIO_PIN_32_L2_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_32_L2_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_32_L2_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_32_L2_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_32_L2_SEL_SHIFT                       3
+#define IOU_SLCR_MIO_PIN_32_L2_SEL_MASK                        0x00000018U
+
+/*
+* Level 3 Mux Select 0= gpio1, Input, gpio_1_pin_in[6]- (GPIO bank 1) 0= g
+    * pio1, Output, gpio_1_pin_out[6]- (GPIO bank 1) 1= can1, Output, can1_phy
+    * _tx- (Can TX signal) 2= i2c1, Input, i2c1_scl_input- (SCL signal) 2= i2c
+    * 1, Output, i2c1_scl_out- (SCL signal) 3= swdt1, Input, swdt1_clk_in- (Wa
+    * tch Dog Timer Input clock) 4= spi1, Input, spi1_sclk_in- (SPI Clock) 4=
+    * spi1, Output, spi1_sclk_out- (SPI Clock) 5= ttc3, Input, ttc3_clk_in- (T
+    * TC Clock) 6= ua1, Output, ua1_txd- (UART transmitter serial output) 7= t
+    * race, Output, tracedq[10]- (Trace Port Databus)
+*/
+#undef IOU_SLCR_MIO_PIN_32_L3_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_32_L3_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_32_L3_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_32_L3_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_32_L3_SEL_SHIFT                       5
+#define IOU_SLCR_MIO_PIN_32_L3_SEL_MASK                        0x000000E0U
+
+/*
+* Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Input, gem0_rgmii_rxd[
+    * 0]- (RX RGMII data)
+*/
+#undef IOU_SLCR_MIO_PIN_33_L0_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_33_L0_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_33_L0_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_33_L0_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_33_L0_SEL_SHIFT                       1
+#define IOU_SLCR_MIO_PIN_33_L0_SEL_MASK                        0x00000002U
+
+/*
+* Level 1 Mux Select 0= Level 2 Mux Output 1= pcie, Input, pcie_reset_n- (
+    * PCIE Reset signal)
+*/
+#undef IOU_SLCR_MIO_PIN_33_L1_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_33_L1_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_33_L1_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_33_L1_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_33_L1_SEL_SHIFT                       2
+#define IOU_SLCR_MIO_PIN_33_L1_SEL_MASK                        0x00000004U
+
+/*
+* Level 2 Mux Select 0= Level 3 Mux Output 1= pmu, Output, pmu_gpo[1]- (PM
+    * U GPI) 2= test_scan, Input, test_scan_in[33]- (Test Scan Port) = test_sc
+    * an, Output, test_scan_out[33]- (Test Scan Port) 3= csu, Input, csu_ext_t
+    * amper- (CSU Ext Tamper)
+*/
+#undef IOU_SLCR_MIO_PIN_33_L2_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_33_L2_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_33_L2_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_33_L2_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_33_L2_SEL_SHIFT                       3
+#define IOU_SLCR_MIO_PIN_33_L2_SEL_MASK                        0x00000018U
+
+/*
+* Level 3 Mux Select 0= gpio1, Input, gpio_1_pin_in[7]- (GPIO bank 1) 0= g
+    * pio1, Output, gpio_1_pin_out[7]- (GPIO bank 1) 1= can1, Input, can1_phy_
+    * rx- (Can RX signal) 2= i2c1, Input, i2c1_sda_input- (SDA signal) 2= i2c1
+    * , Output, i2c1_sda_out- (SDA signal) 3= swdt1, Output, swdt1_rst_out- (W
+    * atch Dog Timer Output clock) 4= spi1, Output, spi1_n_ss_out[2]- (SPI Mas
+    * ter Selects) 5= ttc3, Output, ttc3_wave_out- (TTC Waveform Clock) 6= ua1
+    * , Input, ua1_rxd- (UART receiver serial input) 7= trace, Output, tracedq
+    * [11]- (Trace Port Databus)
+*/
+#undef IOU_SLCR_MIO_PIN_33_L3_SEL_DEFVAL 
+#undef IOU_SLCR_MIO_PIN_33_L3_SEL_SHIFT 
+#undef IOU_SLCR_MIO_PIN_33_L3_SEL_MASK 
+#define IOU_SLCR_MIO_PIN_33_L3_SEL_DEFVAL                      0x00000000
+#define IOU_SLCR_MIO_PIN_33_L3_SEL_SHIFT                       5
+#define IOU_SLCR_MIO_PIN_33_L3_SEL_MASK                        0x000000E0U
+
+/*
 * Master Tri-state Enable for pin 2, active high
 */
 #undef IOU_SLCR_MIO_MST_TRI0_PIN_02_TRI_DEFVAL 
@@ -23048,6 +23481,126 @@
 #define IOU_SLCR_MIO_MST_TRI0_PIN_19_TRI_DEFVAL                0xFFFFFFFF
 #define IOU_SLCR_MIO_MST_TRI0_PIN_19_TRI_SHIFT                 19
 #define IOU_SLCR_MIO_MST_TRI0_PIN_19_TRI_MASK                  0x00080000U
+
+/*
+* Master Tri-state Enable for pin 26, active high
+*/
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_26_TRI_DEFVAL 
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_26_TRI_SHIFT 
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_26_TRI_MASK 
+#define IOU_SLCR_MIO_MST_TRI0_PIN_26_TRI_DEFVAL                0xFFFFFFFF
+#define IOU_SLCR_MIO_MST_TRI0_PIN_26_TRI_SHIFT                 26
+#define IOU_SLCR_MIO_MST_TRI0_PIN_26_TRI_MASK                  0x04000000U
+
+/*
+* Master Tri-state Enable for pin 27, active high
+*/
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_27_TRI_DEFVAL 
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_27_TRI_SHIFT 
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_27_TRI_MASK 
+#define IOU_SLCR_MIO_MST_TRI0_PIN_27_TRI_DEFVAL                0xFFFFFFFF
+#define IOU_SLCR_MIO_MST_TRI0_PIN_27_TRI_SHIFT                 27
+#define IOU_SLCR_MIO_MST_TRI0_PIN_27_TRI_MASK                  0x08000000U
+
+/*
+* Master Tri-state Enable for pin 28, active high
+*/
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_28_TRI_DEFVAL 
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_28_TRI_SHIFT 
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_28_TRI_MASK 
+#define IOU_SLCR_MIO_MST_TRI0_PIN_28_TRI_DEFVAL                0xFFFFFFFF
+#define IOU_SLCR_MIO_MST_TRI0_PIN_28_TRI_SHIFT                 28
+#define IOU_SLCR_MIO_MST_TRI0_PIN_28_TRI_MASK                  0x10000000U
+
+/*
+* Master Tri-state Enable for pin 29, active high
+*/
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_29_TRI_DEFVAL 
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_29_TRI_SHIFT 
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_29_TRI_MASK 
+#define IOU_SLCR_MIO_MST_TRI0_PIN_29_TRI_DEFVAL                0xFFFFFFFF
+#define IOU_SLCR_MIO_MST_TRI0_PIN_29_TRI_SHIFT                 29
+#define IOU_SLCR_MIO_MST_TRI0_PIN_29_TRI_MASK                  0x20000000U
+
+/*
+* Master Tri-state Enable for pin 30, active high
+*/
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_30_TRI_DEFVAL 
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_30_TRI_SHIFT 
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_30_TRI_MASK 
+#define IOU_SLCR_MIO_MST_TRI0_PIN_30_TRI_DEFVAL                0xFFFFFFFF
+#define IOU_SLCR_MIO_MST_TRI0_PIN_30_TRI_SHIFT                 30
+#define IOU_SLCR_MIO_MST_TRI0_PIN_30_TRI_MASK                  0x40000000U
+
+/*
+* Master Tri-state Enable for pin 31, active high
+*/
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_31_TRI_DEFVAL 
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_31_TRI_SHIFT 
+#undef IOU_SLCR_MIO_MST_TRI0_PIN_31_TRI_MASK 
+#define IOU_SLCR_MIO_MST_TRI0_PIN_31_TRI_DEFVAL                0xFFFFFFFF
+#define IOU_SLCR_MIO_MST_TRI0_PIN_31_TRI_SHIFT                 31
+#define IOU_SLCR_MIO_MST_TRI0_PIN_31_TRI_MASK                  0x80000000U
+
+/*
+* Master Tri-state Enable for pin 32, active high
+*/
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_32_TRI_DEFVAL 
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_32_TRI_SHIFT 
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_32_TRI_MASK 
+#define IOU_SLCR_MIO_MST_TRI1_PIN_32_TRI_DEFVAL                0xFFFFFFFF
+#define IOU_SLCR_MIO_MST_TRI1_PIN_32_TRI_SHIFT                 0
+#define IOU_SLCR_MIO_MST_TRI1_PIN_32_TRI_MASK                  0x00000001U
+
+/*
+* Master Tri-state Enable for pin 33, active high
+*/
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_33_TRI_DEFVAL 
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_33_TRI_SHIFT 
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_33_TRI_MASK 
+#define IOU_SLCR_MIO_MST_TRI1_PIN_33_TRI_DEFVAL                0xFFFFFFFF
+#define IOU_SLCR_MIO_MST_TRI1_PIN_33_TRI_SHIFT                 1
+#define IOU_SLCR_MIO_MST_TRI1_PIN_33_TRI_MASK                  0x00000002U
+
+/*
+* Master Tri-state Enable for pin 34, active high
+*/
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_34_TRI_DEFVAL 
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_34_TRI_SHIFT 
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_34_TRI_MASK 
+#define IOU_SLCR_MIO_MST_TRI1_PIN_34_TRI_DEFVAL                0xFFFFFFFF
+#define IOU_SLCR_MIO_MST_TRI1_PIN_34_TRI_SHIFT                 2
+#define IOU_SLCR_MIO_MST_TRI1_PIN_34_TRI_MASK                  0x00000004U
+
+/*
+* Master Tri-state Enable for pin 35, active high
+*/
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_35_TRI_DEFVAL 
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_35_TRI_SHIFT 
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_35_TRI_MASK 
+#define IOU_SLCR_MIO_MST_TRI1_PIN_35_TRI_DEFVAL                0xFFFFFFFF
+#define IOU_SLCR_MIO_MST_TRI1_PIN_35_TRI_SHIFT                 3
+#define IOU_SLCR_MIO_MST_TRI1_PIN_35_TRI_MASK                  0x00000008U
+
+/*
+* Master Tri-state Enable for pin 36, active high
+*/
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_36_TRI_DEFVAL 
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_36_TRI_SHIFT 
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_36_TRI_MASK 
+#define IOU_SLCR_MIO_MST_TRI1_PIN_36_TRI_DEFVAL                0xFFFFFFFF
+#define IOU_SLCR_MIO_MST_TRI1_PIN_36_TRI_SHIFT                 4
+#define IOU_SLCR_MIO_MST_TRI1_PIN_36_TRI_MASK                  0x00000010U
+
+/*
+* Master Tri-state Enable for pin 37, active high
+*/
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_37_TRI_DEFVAL 
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_37_TRI_SHIFT 
+#undef IOU_SLCR_MIO_MST_TRI1_PIN_37_TRI_MASK 
+#define IOU_SLCR_MIO_MST_TRI1_PIN_37_TRI_DEFVAL                0xFFFFFFFF
+#define IOU_SLCR_MIO_MST_TRI1_PIN_37_TRI_SHIFT                 5
+#define IOU_SLCR_MIO_MST_TRI1_PIN_37_TRI_MASK                  0x00000020U
 
 /*
 * Each bit applies to a single IO. Bit 0 for MIO[0].
@@ -29220,6 +29773,8 @@
 #define CRF_APB_RST_FPD_TOP_OFFSET                                                 0XFD1A0100
 #undef CRL_APB_RST_LPD_TOP_OFFSET 
 #define CRL_APB_RST_LPD_TOP_OFFSET                                                 0XFF5E023C
+#undef FPD_SLCR_AFI_FS_OFFSET 
+#define FPD_SLCR_AFI_FS_OFFSET                                                     0XFD615000
 
 /*
 * AF_FM0 block level reset
@@ -29290,6 +29845,30 @@
 #define CRL_APB_RST_LPD_TOP_AFI_FM6_RESET_DEFVAL               0x00188FDF
 #define CRL_APB_RST_LPD_TOP_AFI_FM6_RESET_SHIFT                19
 #define CRL_APB_RST_LPD_TOP_AFI_FM6_RESET_MASK                 0x00080000U
+
+/*
+* Select the 32/64/128-bit data width selection for the Slave 0 00: 32-bit
+    *  AXI data width (default) 01: 64-bit AXI data width 10: 128-bit AXI data
+    *  width 11: reserved
+*/
+#undef FPD_SLCR_AFI_FS_DW_SS0_SEL_DEFVAL 
+#undef FPD_SLCR_AFI_FS_DW_SS0_SEL_SHIFT 
+#undef FPD_SLCR_AFI_FS_DW_SS0_SEL_MASK 
+#define FPD_SLCR_AFI_FS_DW_SS0_SEL_DEFVAL                      0x00000A00
+#define FPD_SLCR_AFI_FS_DW_SS0_SEL_SHIFT                       8
+#define FPD_SLCR_AFI_FS_DW_SS0_SEL_MASK                        0x00000300U
+
+/*
+* Select the 32/64/128-bit data width selection for the Slave 1 00: 32-bit
+    *  AXI data width (default) 01: 64-bit AXI data width 10: 128-bit AXI data
+    *  width 11: reserved
+*/
+#undef FPD_SLCR_AFI_FS_DW_SS1_SEL_DEFVAL 
+#undef FPD_SLCR_AFI_FS_DW_SS1_SEL_SHIFT 
+#undef FPD_SLCR_AFI_FS_DW_SS1_SEL_MASK 
+#define FPD_SLCR_AFI_FS_DW_SS1_SEL_DEFVAL                      0x00000A00
+#define FPD_SLCR_AFI_FS_DW_SS1_SEL_SHIFT                       10
+#define FPD_SLCR_AFI_FS_DW_SS1_SEL_MASK                        0x00000C00U
 #undef GPIO_MASK_DATA_5_MSW_OFFSET 
 #define GPIO_MASK_DATA_5_MSW_OFFSET                                                0XFF0A002C
 #undef GPIO_DIRM_5_OFFSET 

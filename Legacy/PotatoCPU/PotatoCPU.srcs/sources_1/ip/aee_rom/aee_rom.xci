@@ -4,7 +4,7 @@
     "xci_name": "aee_rom",
     "component_reference": "xilinx.com:ip:blk_mem_gen:8.4",
     "ip_revision": "5",
-    "gen_directory": "../../../../PotatoCPU.gen/sources_1/ip/aee_rom_2",
+    "gen_directory": "../../../../PotatoCPU.gen/sources_1/ip/aee_rom",
     "parameters": {
       "component_parameters": {
         "Component_Name": [ { "value": "aee_rom", "resolve_type": "user", "usage": "all" } ],
@@ -176,7 +176,7 @@
         "IPCONTEXT": [ { "value": "IP_Flow" } ],
         "IPREVISION": [ { "value": "5" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../PotatoCPU.gen/sources_1/ip/aee_rom_2" } ],
+        "OUTPUTDIR": [ { "value": "../../../../PotatoCPU.gen/sources_1/ip/aee_rom" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "." } ],
         "SWVERSION": [ { "value": "2022.2" } ],

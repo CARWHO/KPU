@@ -1,3 +1,5 @@
+![Board Schematic](./diagram.png)
+
 # KPU: FPGA RISC-V CPU on Avnet ZUBoard 1CG
 
 KPU is a compact RISC-V CPU core written in VHDL for FPGA deployment. It fully implements the RV32I base integer ISA (v2.0) and core machine-mode features (Privileged Spec v1.10). Verified as a System-on-Chip on the Avnet 1CG board with example applications; synthesized under Xilinx Vivado 2022.2.

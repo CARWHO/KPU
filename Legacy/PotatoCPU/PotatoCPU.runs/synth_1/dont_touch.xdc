@@ -12,4 +12,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zynqTOclkwi
 # IP: bd/zynqTOclkwizard/ip/zynqTOclkwizard_clk_wiz_0_0/zynqTOclkwizard_clk_wiz_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zynqTOclkwizard_clk_wiz_0_0 || ORIG_REF_NAME==zynqTOclkwizard_clk_wiz_0_0} -quiet] -quiet
 
-# XDC: d:/OneDrive_2025-04-23/RISCV CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/zynqTOclkwizard_ooc.xdc
+# XDC: e:/GIt/RISC-V-CPU/PotatoCPU/PotatoCPU.gen/sources_1/bd/zynqTOclkwizard/zynqTOclkwizard_ooc.xdc
