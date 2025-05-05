@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../KPU_vol1.gen/sources_1/ip/aee_rom/sim/aee_rom.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort
